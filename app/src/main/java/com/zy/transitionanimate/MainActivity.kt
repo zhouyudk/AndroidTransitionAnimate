@@ -1,9 +1,11 @@
 package com.zy.transitionanimate
 
 import android.content.Intent
+import android.graphics.drawable.Animatable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import com.zy.transitionanimate.scene.ManualSceneActivity
 import com.zy.transitionanimate.scene.SystemSceneActivity
 import com.zy.transitionanimate.shareviewtransition.ShareViewFirstActivity
@@ -20,6 +22,10 @@ class MainActivity : AppCompatActivity() {
 
     val btnManualScene: Button by lazy {
         findViewById<Button>(R.id.btn_manual_scene)
+    }
+
+    val testImage: ImageView by lazy {
+        findViewById<ImageView>(R.id.iv_test)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +46,11 @@ class MainActivity : AppCompatActivity() {
 
         btnManualScene.setOnClickListener {
             startActivity(Intent(this, ManualSceneActivity::class.java))
+        }
+        testImage.setOnClickListener {
+            (testImage.drawable as Animatable)?.let {
+                it.start()
+            }
         }
     }
 }

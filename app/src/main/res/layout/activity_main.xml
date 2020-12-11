@@ -27,6 +27,11 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:text="手动创建Scene"/>
+        <ImageView
+            android:id="@+id/iv_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/avd"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
